@@ -1,0 +1,9 @@
+<div class="container">
+
+  <h1>Product Index</h1>
+
+  <% @products.each do |product| %>
+    <%= link_to "#{Product.name}", product_path(product)  %>
+    <br>
+  <% end %>
+</div>

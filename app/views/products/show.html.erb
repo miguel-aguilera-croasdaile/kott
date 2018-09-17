@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Product Show</h1>
+
+  <p> <%= @product.name %></p>
+  <p> <%= @product.price %></p>
+  <p> <%= @product.available %></p>
+
+  <%= render 'orders/form', product: @product, order: @order %>
+
+</div>
