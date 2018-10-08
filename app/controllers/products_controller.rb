@@ -3,14 +3,10 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
-
     @products = Product.all
-
   end
 
   def show
-    @product = Product.find(params[:id])
-    @order = Order.new  # <-- You need this now.
   end
 
   def new
@@ -32,6 +28,16 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     redirect_to root_path
+  end
+
+  def add_to_cart
+
+    @product = Product.find(params[:product_id])
+    @user = current_user
+
+    new_carts = @user.carts
+    new_carts << @product
+    @user.update_attribute(:carts, new_carts)
   end
 
   private
