@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-p product_one = Product.create(name: "Product One", price: "100 Lps", available: true)
-p product_two = Product.create(name: "Product two", price: "100 Lps", available: true)
-p product_three = Product.create(name: "Product three", price: "100 Lps", available: true)
-p product_four = Product.create(name: "Product four", price: "100 Lps", available: true)
+product_one = Product.create(name: "Product One", price: "100 Lps", available: true)
+product_two = Product.create(name: "Product two", price: "100 Lps", available: true)
+product_three = Product.create(name: "Product three", price: "100 Lps", available: true)
+product_four = Product.create(name: "Product four", price: "100 Lps", available: true)
 
