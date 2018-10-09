@@ -1,5 +1,25 @@
 <div class="container">
   <h1>Kott</h1>
-
-  <%= link_to "Products Index", products_path %>
+  <%= link_to "Shop All", products_path %>
 </div>
+
+
+<!-- Code for popup login created by front-end wizards -->
+
+<div id="modal-wrapper" class="modal">
+  <div class="modal-content animate">
+    <%= render "shared/login" %>
+  </div>
+
+  <div class="close">X</div>
+</div>
+
+<script>
+  var modal = document.getElementById('modal-wrapper');
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+

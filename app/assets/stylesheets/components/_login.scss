@@ -1,0 +1,52 @@
+.form{
+  background-color: #fefefe;
+  padding: 20px;
+  margin: auto;
+  width: 500px;
+  top: 10px;
+}
+
+.form-bottom{
+  text-align: center;
+  padding: 5px;
+}
+
+.devise-links{
+  margin: 10px;
+  text-align: center;
+}
+
+// Here be dragons
+
+// This is the background
+.modal {
+  display:none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  background-color: rgba(0,0,0,0.4);
+}
+
+// This is the floating card
+.modal-content {
+  width: 500px;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  margin-top: 12%;
+  box-shadow: 0px 0px 0px;
+}
+
+/* The Close Button (x) */
+
+.animate {
+  animation: zoom 0.6s
+}
+@keyframes zoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
