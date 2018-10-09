@@ -30,16 +30,6 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
-  def add_to_cart
-
-    @product = Product.find(params[:product_id])
-    @user = current_user
-
-    new_carts = @user.carts
-    new_carts << @product
-    @user.update_attribute(:carts, new_carts)
-  end
-
   private
 
   def set_product
