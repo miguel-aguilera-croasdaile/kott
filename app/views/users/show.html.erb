@@ -1,1 +1,16 @@
 <h1>User Cart Show</h1>
+
+<hr>
+
+<% @cart_items.each do |cart_item| %>
+<% @product = Product.find(cart_item.product_id) %>
+
+<p> <%= @product.name  %> </p>
+<p> <%= @product.available  %> </p>
+<p> <%= @product.price  %> </p>
+
+<hr>
+
+<% end %>
+
+
