@@ -10,9 +10,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    if resource.save
+      @cart = Cart.new(user_id: resource.id)
+      @cart.save!
+    end
+  end
 
   # GET /resource/edit
   # def edit

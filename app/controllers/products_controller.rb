@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    @product = Product.find(params[:product_id])
+    @product = Product.find(params[:product_id]).id
     @user = current_user
     new_carts = @user.carts
     new_carts << @product
