@@ -4,7 +4,16 @@
 
   <div class="links">
 
+    <% if current_user.is_admin == true %>
+
+    <%= link_to "Add Product", new_product_path(@product) %>
+
+    <% else %>
+
     <%= link_to "My Cart", user_path(current_user), class: "link" %>
+
+    <% end %>
+
     <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "link" ) %>
 
   </div>

@@ -5,7 +5,15 @@
   <p> <%= @product.price %></p>
   <p> <%= @product.available %></p>
 
+  <% if current_user.is_admin == true  %>
+
+  <%= link_to 'Edit Product', edit_product_path(@product), class: "btn" %>
+
+  <% else %>
+
   <%= button_to 'Add To Cart', product_add_to_cart_path(@product), method: :post, class: "btn" %>
+
+  <% end %>
 
 </div>
 
