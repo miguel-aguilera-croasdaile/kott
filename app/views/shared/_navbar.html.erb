@@ -10,7 +10,7 @@
 
     <% else %>
 
-    <%= link_to "My Cart", "my_cart", class: "link" %>
+    <%= link_to "My Cart", cart_path(current_user), class: "link" %>
 
     <% end %>
 

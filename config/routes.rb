@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/my_cart', to: 'carts#show'
   devise_for :users
   resources :carts, :only => [:show]
+  resources :cart_items, :only => [:create]
   resources :products do
     post 'add_to_cart'
   end
