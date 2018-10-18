@@ -2,9 +2,8 @@
 
 
 <h1> Confirm Order </h1>
-<% @items.each_with_index do |item, index| %>
+<% current_user.cart.cart_items.each_with_index do |item, index| %>
 <% product = Product.find(item.product_id) %>
-<% @total_cost += product.price.to_i %>
 
 <p><%= index + 1%>. <%= product.name %> </p>
 <p> <%= product.price %> </p>
@@ -12,10 +11,6 @@
 <% end %>
 
 <hr>
-
-<h2>Total Cost: <%= @total_cost %></h2>
-
-<%= f.input :total_cost, as: :hidden, value: @total_cost %>
 <%= f.button :submit, class: "btn" %>
 
 <% end %>
