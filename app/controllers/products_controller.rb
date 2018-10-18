@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
   def add_to_cart
     @product = Product.find(params[:product_id]).id
     @user = current_user
-    @cart_item = CartItem.new(user_id: @user.id, product_id: @product)
+    @cart_item = CartItem.new(cart_id: @user.id, product_id: @product)
     @cart_item.save!
   end
 

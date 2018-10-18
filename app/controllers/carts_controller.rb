@@ -1,2 +1,13 @@
 class CartsController < ApplicationController
+  before_action :set_user
+
+  def show
+    @cart_items = @user.cart.cart_items
+  end
+
+  private
+
+  def set_user
+    @user = current_user
+  end
 end

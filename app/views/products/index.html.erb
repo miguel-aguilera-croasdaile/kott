@@ -3,7 +3,6 @@
   <h1>Product Index</h1>
 
   <% @products.each do |product| %>
-    <%= link_to "#{product.name}", product_path(product)  %>
-    <br>
+    <p> <%= link_to "#{product.name}", product_path(product)  %> </p>
   <% end %>
 </div>
