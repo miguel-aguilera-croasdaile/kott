@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  get '/my_cart', to: 'carts#show'
   devise_for :users
   resources :carts, :only => [:show]
   resources :cart_items, :only => [:create]

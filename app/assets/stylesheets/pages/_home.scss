@@ -2,3 +2,21 @@
 body{
   background: #E65A54;
 }
+.home-banner{
+  text-align: center;
+}
+
+.home-banner-links{
+  width: 50%;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.featured-container{
+  width: 100%;
+  margin: auto;
+  margin-bottom: 20px;
+  border: 2px dashed blue;
+}

@@ -4,6 +4,8 @@
   padding: 0px 30px;
   display: flex;
   align-items: center;
+  margin-bottom: 0px;
+  height: 7vh;
 }
 
 .navbar > div{
@@ -18,7 +20,7 @@
 }
 
 .link{
-  margin-right: 15px;
+  margin: 10px;
 }
 
 .fa-bars{

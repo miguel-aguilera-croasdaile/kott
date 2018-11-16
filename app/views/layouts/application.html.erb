@@ -14,9 +14,13 @@
   <%= render 'shared/flashes' %>
   <%= render 'shared/sidebar' %>
 
-  <div class="container">
-    <%= yield %>
+  <div class="body">
+    <div class="container">
+      <%= yield %>
+    </div>
   </div>
+
+  <%= render "shared/footer" %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
 </body>

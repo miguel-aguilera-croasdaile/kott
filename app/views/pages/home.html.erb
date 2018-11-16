@@ -1,8 +1,28 @@
-<div class="container">
-  <h1>Kott</h1>
-  <%= link_to "Shop All", products_path %>
-</div>
+<div class="home-banner">
 
+  <h1> <span class="bolder" id="home">Cutt</span> </h1>
+
+  <div class="home-banner-links bolder">
+    <a class= "link" href="#">About</a>
+    <a class= "link" href="#">Account</a>
+    <a class= "link" href="#">Support</a>
+    <a class= "link" href="#">Contact</a>
+  </div>
+
+  <div class="container-fluid featured-container">
+    <div class="row">
+      <% @featured.each do |featured_product| %>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <%= link_to product_path(featured_product) do %>
+        <div class="product-card" data-toggle="popover" data-content="You gotta go through it to see there ain't nothing to it. Listen to the silence.">
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
 
 <!-- Code for popup login created by front-end wizards -->
 

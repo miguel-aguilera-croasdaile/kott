@@ -10,7 +10,8 @@
 
   <div class="links">
     <% if current_user.is_admin %>
-    <%= link_to "Add Product", new_product_path(@product) %>
+    <%= link_to "Add Product", new_product_path(@product), class: "link" %>
+    <%= link_to "Manage Products", "#", class: "link" %>
     <% else %>
     <%= link_to cart_path(current_user), class: "link" do %>
       <i class="fa fa-shopping-cart"></i>
