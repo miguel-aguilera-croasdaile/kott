@@ -1,6 +1,6 @@
 <div class="home-banner">
 
-  <h1> <span class="bolder" id="home">Cutt</span> </h1>
+  <h1> <span class="bolder" id="home"> kott</span> </h1>
 
   <div class="home-banner-links bolder">
     <a class= "link" href="#">About</a>
@@ -14,7 +14,15 @@
       <% @featured.each do |featured_product| %>
       <div class="col-sm-4 col-md-4 col-lg-4">
         <%= link_to product_path(featured_product) do %>
-        <div class="product-card" data-toggle="popover" data-content="You gotta go through it to see there ain't nothing to it. Listen to the silence.">
+        <div class="product-card ">
+          <div class="product-hover-card">
+            <div class="product-information-wrapper">
+              <div class="product-information">
+                <p> <%= featured_product.name %> </p>
+                <p> Lps <%= featured_product.price %> </p>
+              </div>
+            </div>
+          </div>
         </div>
         <% end %>
       </div>
@@ -22,24 +30,22 @@
     </div>
   </div>
 
-</div>
+  <!-- Code for popup login created by front-end wizards -->
 
-<!-- Code for popup login created by front-end wizards -->
+  <div id="modal-wrapper" class="modal">
+    <div class="modal-content animate">
+      <%= render "shared/login" %>
+    </div>
 
-<div id="modal-wrapper" class="modal">
-  <div class="modal-content animate">
-    <%= render "shared/login" %>
+    <div class="close">X</div>
   </div>
 
-  <div class="close">X</div>
-</div>
-
-<script>
-  var modal = document.getElementById('modal-wrapper');
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+  <script>
+    var modal = document.getElementById('modal-wrapper');
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
     }
-  }
-</script>
+  </script>
 

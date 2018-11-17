@@ -4,12 +4,11 @@ function hover(){
   const home = document.getElementById('home');
 
   if (home) {
-    $(document).ready(function() {
-     $('[data-toggle="popover"]').popover({
-      placement: 'top',
-      trigger: 'hover'
+    $(function() {
+      $(".product-card").hover(function() {
+        $(this).find(".product-hover-card").animate({ opacity: "toggle"}, {duration: 200 })
+      });
     });
-   });
   }
 }
 
