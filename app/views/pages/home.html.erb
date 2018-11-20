@@ -2,7 +2,7 @@
 
   <h1> <span class="bolder" id="home"> kott</span> </h1>
 
-  <div class="home-banner-links bolder">
+  <div class="home-banner-links">
     <a class= "link" href="#">About</a>
     <a class= "link" href="#">Account</a>
     <a class= "link" href="#">Support</a>
@@ -14,16 +14,20 @@
       <% @featured.each do |featured_product| %>
       <div class="col-sm-4 col-md-4 col-lg-4">
         <%= link_to product_path(featured_product) do %>
-        <div class="product-card ">
+        <div class="featured-card">
+
+          <%= image_tag("product.png", class: "featured-product-image") %>
+
           <div class="product-hover-card">
             <div class="product-information-wrapper">
               <div class="product-information">
-                <p> <%= featured_product.name %> </p>
-                <p> Lps <%= featured_product.price %> </p>
+                <p>test</p>
               </div>
             </div>
           </div>
+
         </div>
+
         <% end %>
       </div>
       <% end %>

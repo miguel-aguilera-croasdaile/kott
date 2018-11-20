@@ -1,20 +1,17 @@
-<div class="container">
-  <h1>Product Show</h1>
+<div class="product-show-container">
+  <div class="product-images">
 
-  <p> <%= @product.name %></p>
-  <p> <%= @product.price %></p>
-  <p> <%= @product.available %></p>
+  </div>
 
-  <% if current_user.is_admin == true  %>
+  <div class="product-details">
 
-  <%= link_to 'Edit Product', edit_product_path(@product), class: "btn" %>
+    <p> <%= @product.name %></p>
+    <p> <%= @product.price %></p>
+    <p> <%= @product.available %></p>
 
-  <% else %>
+    <%= button_to 'Add To Cart', product_add_to_cart_path(@product), method: :post, class: "btn" %>
 
-  <%= button_to 'Add To Cart', product_add_to_cart_path(@product), method: :post, class: "btn" %>
+  </div>
 
-  <% end %>
 
 </div>
-
-

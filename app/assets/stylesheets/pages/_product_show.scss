@@ -1,0 +1,20 @@
+.product-show-container{
+  display: flex;
+  min-height: 200vh;
+}
+
+.product-images{
+  background-color: blue;
+  margin-right: 5px;
+  min-height: 60vh;
+  width: 60%;
+}
+
+.product-details{
+  background-color: red;
+  height: 40vh;
+  width: 40%;
+   position: -webkit-sticky; /* Safari */
+   position: sticky;
+   top: 0;
+ }

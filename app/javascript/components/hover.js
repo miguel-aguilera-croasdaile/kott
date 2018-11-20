@@ -5,7 +5,7 @@ function hover(){
 
   if (home) {
     $(function() {
-      $(".product-card").hover(function() {
+      $(".featured-card").hover(function() {
         $(this).find(".product-hover-card").animate({ opacity: "toggle"}, {duration: 200 })
       });
     });
