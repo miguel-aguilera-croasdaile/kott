@@ -14,10 +14,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-    @product.available = true
-    @product.save!
-    redirect_to product_path(@product)
+   @product = Product.new(product_params)
+
+    respond_to do |format|
+      if @product.save
+        params[:images]['photo'].each do |a|
+          @product_attachment = @product.images.create!(:photo => a, :product_id => @product.id)
+        end
+       format.html { redirect_to @product, notice: 'product was successfully created.' }
+      else
+       format.html { render action: 'new' }
+      end
+    end
   end
 
   def edit
@@ -45,6 +53,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :available)
+    params.require(:product).permit(:name, :price, :available, images: [:id, :product_id, :media => []])
   end
+
 end
