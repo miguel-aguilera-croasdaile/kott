@@ -10,6 +10,8 @@ class CartsController < ApplicationController
     end
     @cart_total
 
+    @order = Order.new
+
   end
 
 end

@@ -6,14 +6,26 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.user = current_user
-    @order.save!
+    @order.total = 0
 
     @cart_items = current_user.cart.cart_items
-    @cart_items.each do |item|
-      @product = Product.find(item.product_id)
-      @order_item = OrderItem.new(order: @order, product: @product)
+    @cart_items.each do |cart_item|
+
+      @order_item = OrderItem.new(
+        order: @order,
+        product: cart_item.product,
+        name: cart_item.product.name ,
+        price: cart_item.product.price,
+        size: cart_item.size,
+        quantity: cart_item.quantity
+        )
       @order_item.save!
+      @order.total = @order.total + (cart_item.product.price.to_i * cart_item.quantity.to_i)
+
     end
+
+    @order.save!
+
   end
 
   def edit
@@ -28,7 +40,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.permit(:total_cost, :user)
+    params.permit(:user)
   end
 
 end

@@ -100,7 +100,9 @@
       <div class="cart-summary-button">
 
         <% unless @cart_items.empty? %>
-        <%= link_to "Continue to Checkout", new_order_path, class: "checkout-button"  %>
+        <%= simple_form_for(@order) do |t| %>
+        <%= t.button :submit, class: "checkout-button" %>
+        <% end %>
         <% end %>
 
       </div>

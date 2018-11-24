@@ -5,6 +5,7 @@ class CartItemsController < ApplicationController
     @cart_item = CartItem.new(cart_item_params)
     @cart_item.product = @product
     @cart_item.price = @product.price
+    @cart_item.name = @product.name
     @cart_item.cart = current_user.cart
     @cart_item.save!
     if @cart_item.save
