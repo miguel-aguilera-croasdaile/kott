@@ -1,6 +1,7 @@
 .product-show-container{
   display: flex;
   min-height: 200vh;
+  align-items: flex-start;
 }
 
 .product-images{
@@ -23,10 +24,26 @@
 }
 
 .product-details{
-  background-color: red;
-  height: 40vh;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  padding: 10px;
+  min-height: 40vh;
   width: 40%;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
+}
+
+.product-info {
+  margin: 5px;
+  padding: 10px;
+}
+
+.buy-box {
+  margin: 5px;
+  padding: 10px;
+}
+
+.centered-button{
+  text-align: center;
 }

@@ -11,16 +11,36 @@
 
   <div class="product-details">
 
-    <p> <b> <%= @product.name %> </b> </p>
-    <p> <%= @product.price %></p>
-    <p> <%= @product.available %></p>
+    <div class="product-info">
 
-    <%= simple_form_for([ @product, @cart_item ]) do |t| %>
-    <%= t.input :size %>
-    <%= t.input :quantity %>
+      <p> <b> <%= @product.name %> </b> </p>
+      <p> <%= @product.price %></p>
+      <p> <%= @product.available %></p>
 
-    <%= t.button :submit %>
-    <% end %>
+    </div>
+
+    <div class="buy-box">
+
+      <% if current_user.is_admin %>
+
+      <% else %>
+
+      <%= simple_form_for([ @product, @cart_item ]) do |t| %>
+      <div class="inline-inputs">
+        <%= t.input :size, collection: [ "XS", "S", "M", "L", "XL"], id: "size-select" %>
+        <%= t.input :quantity, id: "quantity-select"  %>
+      </div>
+
+      <div class="centered-button">
+        <%= t.button :submit, "Add to Cart", class: "primary-button" %>
+      </div>
+      <% end %>
+
+      <% end %>
+
+    </div>
+
+
 
   </div>
 

@@ -16,3 +16,22 @@
   color: white;
   background-color: #c65025;
 }
+
+.primary-button{
+  background-color: blue;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 2px !important;
+  padding: 10px;
+  color: #fefefe;
+  transition: all 0.25s ease;
+  a{text-decoration:none};
+  text-align: center;
+}
+
+.primary-button:hover{
+  text-decoration: none !important;
+  color: white;
+  background-color: green;
+}
