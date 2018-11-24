@@ -13,9 +13,21 @@
     <%= link_to "Add Product", new_product_path(@product), class: "link" %>
     <%= link_to "Manage Products", "#", class: "link" %>
     <% else %>
-    <%= link_to cart_path(current_user), class: "link" do %>
+
+    <div class="cart-wrapper" >
+      <div class="cart-counter" style="display: <%= current_user.hide_if_no_notifications %>">
+        <div class="dot">
+          <%= current_user.cart.cart_items.count %>
+        </div>
+      </div>
+
+      <%= link_to cart_path(current_user), class: "link" do %>
       <i class="fa fa-shopping-cart"></i>
-    <% end %>
+      <% end %>
+
+    </div>
+
+
     <% end %>
     <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "link" ) %>
   </div>

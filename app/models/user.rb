@@ -10,6 +10,14 @@ class User < ApplicationRecord
     cart.save!
   end
 
+  def hide_if_no_notifications
+    if self.cart.cart_items.count == 0
+      'none'
+    else
+      'block'
+    end
+  end
+
   # DEVISE
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
