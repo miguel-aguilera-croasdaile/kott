@@ -21,6 +21,12 @@ class CartItemsController < ApplicationController
   #   @cart_item.save!
   # end
 
+  def destroy
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy
+    redirect_to cart_path(current_user), :notice => "Your cart_item has been deleted"
+  end
+
   private
 
   def cart_item_params
