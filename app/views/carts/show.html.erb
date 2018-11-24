@@ -1,16 +1,92 @@
-<h1>User Cart Show</h1>
+<div class="cart-container">
 
-<hr>
+  <div class="cart-left">
 
-<% @cart_items.each do |cart_item| %>
+    <div class="cart-card">
 
-<% @product = Product.find(cart_item.product_id) %>
-<p> <%= @product.name  %> </p>
-<p> <%= @product.available  %> </p>
-<p> <%= @product.price  %> </p>
+      <div class="cart-card-header">
 
-<hr>
-<% end %>
+        <h4> <b> Your Cart (<%= @cart_items.count %>) </b> </h4>
+
+      </div>
+
+      <% @cart_items.each do |cart_item| %>
+
+      <div class="cart-card-body">
 
 
-<%= link_to "Proceed to Checkout", new_order_path ,class: "btn"  %>
+        <div class="cart-card-body-image">
+          <div class="cart-product-image" style="background-image: url(<%= cl_image_path cart_item.product.main_photo, height: 200, width: 200, crop: :fill %>);"> </div>
+        </div>
+
+        <div class="cart-card-body-text">
+
+          <div class="cart-product-title">
+            <p> <b> <%= link_to cart_item.product.name, product_path(cart_item.product) %> </b> </p>
+          </div>
+
+          <hr>
+
+          <div class="cart-product-info">
+            <p> <b> Size: </b> <%= cart_item.size  %> </p>
+            <p> <b> Quantity: </b> <%= cart_item.quantity  %> </p>
+            <p> <b> Price: </b> <%= cart_item.product.price %> Lps </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <% end %>
+
+    </div>
+
+  </div>
+
+  <div class="cart-right">
+
+    <div class="cart-summary">
+
+      <div class="cart-summary-header">
+
+        <h4> <b> Summary </b> </h4>
+
+      </div>
+
+      <div class="cart-summary-body">
+
+        <% @cart_items.each_with_index do |cart_item, index|%>
+
+        <p> <%= index + 1 %>. <%= cart_item.product.name %> size '<%= cart_item.size %>' x <%= cart_item.quantity %></p>
+
+        <% end %>
+
+        <div class="split-apart">
+
+          <div class="align-left">
+
+            <h4>  Total:  </h4>
+
+          </div>
+
+          <div class="align-right">
+
+            <h4> <%= @cart_total %> Lps </h4>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="cart-summary-button">
+
+        <%= link_to "Continue to Checkout", new_order_path, class: "checkout-button"  %>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

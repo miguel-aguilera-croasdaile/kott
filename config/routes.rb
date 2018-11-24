@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
   resources :carts, :only => [:show]
-  resources :cart_items, :only => [:create]
   resources :products do
-    post 'add_to_cart'
+    resources :cart_items,  only: :create
   end
   resources :orders
 end

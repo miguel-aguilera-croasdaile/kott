@@ -1,13 +1,15 @@
 class CartsController < ApplicationController
-  before_action :set_user
 
   def show
-    @cart_items = @user.cart.cart_items
+    @cart_items = current_user.cart.cart_items
+    @cart_total = 0
+    @cart_items.each do |cart_item|
+      cart_item.quantity.to_i.times do
+        @cart_total = @cart_total + (cart_item.price.to_i)
+      end
+    end
+    @cart_total
+
   end
 
-  private
-
-  def set_user
-    @user = current_user
-  end
 end

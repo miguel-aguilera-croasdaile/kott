@@ -1,19 +1,26 @@
 <div class="product-show-container">
   <div class="product-images">
 
+    <div class="product-image" style="background-image: url(<%= @product.main_photo %> );"> </div>
+
     <% @product.images.each do |image| %>
-    <%= cl_image_tag image.photo %>
+    <div class="product-image" style="background-image: url(<%= image.photo %> );"> </div>
     <% end %>
 
   </div>
 
   <div class="product-details">
 
-    <p> <%= @product.name %></p>
+    <p> <b> <%= @product.name %> </b> </p>
     <p> <%= @product.price %></p>
     <p> <%= @product.available %></p>
 
-    <%= button_to 'Add To Cart', product_add_to_cart_path(@product), method: :post, class: "btn" %>
+    <%= simple_form_for([ @product, @cart_item ]) do |t| %>
+    <%= t.input :size %>
+    <%= t.input :quantity %>
+
+    <%= t.button :submit %>
+    <% end %>
 
   </div>
 

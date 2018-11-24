@@ -3,7 +3,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
     create_table :products do |t|
       t.string :name
       t.string :price
-      t.boolean :available
+      t.boolean :available, default: true
+      t.boolean :featured, default: false
 
       t.timestamps
     end
