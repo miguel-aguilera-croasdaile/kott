@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
         params[:images]['photo'].each do |a|
           @product_attachment = @product.images.create!(:photo => a, :product_id => @product.id)
         end
-       format.html { redirect_to @product, notice: 'product was successfully created.' }
+       format.html { redirect_to @product, notice: 'Product was successfully created.' }
       else
        format.html { render action: 'new' }
       end

@@ -6,6 +6,7 @@
   text-align: center;
   color: white;
   position: absolute;
+  z-index: 1000;
 }
 
 .custom-alert {
@@ -24,4 +25,25 @@
 
 .alert-warning {
   background: $red;
+}
+
+.cart-item-created{
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.cart-item-created-card{
+  background-color: white;
+  border-radius: 5px;
+  width: 50%;
+  height: 50%;
+  padding: 20px;
 }

@@ -1,12 +1,26 @@
 <% if notice %>
-  <div class="custom-alert alert-info alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= notice %>
-  </div>
+
+<div class="custom-alert alert-info alert-dismissible" role="alert">
+  <%= notice %>
+</div>
+
 <% end %>
+
 <% if alert %>
-  <div class="alert alert-warning alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= alert %>
+
+<div class="alert alert-warning alert-dismissible" role="alert">
+  <%= alert %>
+</div>
+
+<% end %>
+
+<% if cart_item_created %>
+
+<div class="cart-item-created" id="cart-notification">
+  <div class="cart-item-created-card">
+    <%= cart_item_created %>
+    <p id="dismissCartNotification"> x </p>
   </div>
+</div>
+
 <% end %>

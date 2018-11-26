@@ -8,19 +8,12 @@ class CartItemsController < ApplicationController
     @cart_item.name = @product.name
     @cart_item.cart = current_user.cart
     @cart_item.save!
-    if @cart_item.save
+
+    if @cart_item.save!
       redirect_to product_path(@product)
-    else
-      render 'products/show'
+      flash[:cart_item_created] = "Product added to cart."
     end
   end
-
-  # def create
-  #   @cart_item = CartItem.new(cart_item_params)
-  #   @cart_item.cart = current_user.cart
-  #   @cart_item.product = params[:cart_item][:product]
-  #   @cart_item.save!
-  # end
 
   def destroy
     @cart_item = CartItem.find(params[:id])

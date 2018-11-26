@@ -20,7 +20,6 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  // display: inline-block;
 }
 
 .product-details{
@@ -31,7 +30,8 @@
   width: 40%;
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 0;
+  top: 5px;
+  z-index: 1;
 }
 
 .product-info {
