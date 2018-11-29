@@ -1,5 +1,36 @@
-<h1>Product Index</h1>
+<div class="home-banner">
 
-  <% @products.each do |product| %>
-    <p> <%= link_to "#{product.name}", product_path(product)  %> </p>
-  <% end %>
+  <h1> <span class="bolder" id="home"> kott </span> </h1>
+
+  <div class="home-banner-links">
+    <%= link_to "All Products", products_path, class: "link" %>
+    <a class= "link" href="#">About</a>
+    <a class= "link" href="#">Support</a>
+    <a class= "link" href="#">Contact</a>
+  </div>
+
+  <div class="container-fluid featured-container">
+    <div class="row">
+      <% @products.each do |featured_product| %>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <%= link_to product_path(featured_product) do %>
+        <div class="featured-card">
+
+          <%= image_tag("product.png", class: "featured-product-image") %>
+
+          <div class="product-hover-card">
+            <div class="product-information-wrapper">
+              <div class="product-information">
+                <p>test</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

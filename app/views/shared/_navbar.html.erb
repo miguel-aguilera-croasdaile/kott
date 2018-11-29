@@ -1,20 +1,22 @@
 <div class="navbar">
 
-  <div class="sidebar-trigger">
-    <span onclick="openNav()">
-      <i class="fa fa-bars"></i>
-    </span>
+  <div class="navbar-left">
+
+    <div class="sidebar-trigger">
+      <span onclick="openNav()">
+        <i class="fa fa-bars"></i>
+      </span>
+    </div>
+
   </div>
 
-  <% if user_signed_in? %>
+  <div class="navbar-right">
 
-  <div class="links">
-    <% if current_user.is_admin %>
-    <%= link_to "Add Product", new_product_path(@product), class: "link" %>
-    <%= link_to "Manage Products", "#", class: "link" %>
-    <% else %>
+    <% if user_signed_in? %>
 
-    <div class="cart-wrapper" >
+    <%= link_to "Add Product", new_product_path(@product), class: "link" if current_user.is_admin %>
+
+    <div class="cart-wrapper">
       <div class="cart-counter" style="display: <%= current_user.hide_if_no_notifications %>">
         <div class="dot">
           <%= current_user.cart.cart_items.count %>
@@ -27,16 +29,15 @@
 
     </div>
 
+    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "link" ) %>
+
+    <% else %>
+
+    <%= link_to('Log In', new_user_session_path, class: "link" ) %>
+
 
     <% end %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "link" ) %>
-  </div>
 
-  <% elsif user_signed_in? == false && current_page?(root_url) %>
-  <div class="links">
-    <a onclick="document.getElementById('modal-wrapper').style.display='block'"> Login </a>
   </div>
-
-  <% end %>
 
 </div>

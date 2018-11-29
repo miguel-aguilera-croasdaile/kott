@@ -1,6 +1,6 @@
 .navbar{
   justify-content: space-between;
-  background-color: white;
+  background-color: orange;
   padding: 0px 30px;
   display: flex;
   justify-content: space-between;
@@ -9,9 +9,20 @@
   height: 7vh;
 }
 
-.navbar > div{
-  width: 100%;
-  align-items: center;
+div{
+  border: 1px solid red;
+}
+
+.navbar-left{
+  justify-content: flex-begin;
+  display: flex;
+  width: 50%;
+}
+
+.navbar-right{
+  justify-content: flex-end;
+  display: flex;
+  width: 50%;
 }
 
 .links{
@@ -21,7 +32,7 @@
 }
 
 .link{
-  margin: 10px;
+  margin: 0 10px;
 }
 
 .fa-bars{
