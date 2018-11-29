@@ -18,9 +18,51 @@
 
 <div class="cart-item-created" id="cart-notification">
   <div class="cart-item-created-card">
-    <%= cart_item_created %>
-    <p id="dismissCartNotification"> x </p>
+    <div class="dismiss-button">
+      <p id="dismissCartNotification"> x </p>
+    </div>
+
+    <div class="alert-header">
+      <h4> <b> <%= cart_item_created %> </h4> </b>
+    </div>
+
+    <div class="alert-text">
+      <p> <%= link_to "See other products", products_path %> </p>
+      <p> <%= link_to "Go to Cart and Checkout", cart_path %> </p>
+    </div>
+
   </div>
 </div>
 
 <% end %>
+
+
+<% if product_created %>
+
+<div class="cart-item-created" id="cart-notification">
+  <div class="cart-item-created-card">
+    <div class="dismiss-button">
+      <p id="dismissCartNotification"> x </p>
+    </div>
+
+    <div class="alert-header">
+      <div class="f-modal-alert">
+        <div class="f-modal-icon f-modal-success animate">
+          <span class="f-modal-line f-modal-tip animateSuccessTip"></span>
+          <span class="f-modal-line f-modal-long animateSuccessLong"></span>
+          <div class="f-modal-placeholder"></div>
+          <div class="f-modal-fix"></div>
+        </div>
+      </div>
+
+      <h4> <b> <%= product_created %> </h4> </b>
+    </div>
+
+    <div class="alert-text">
+    </div>
+
+  </div>
+</div>
+
+<% end %>
+

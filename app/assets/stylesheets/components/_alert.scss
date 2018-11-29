@@ -45,5 +45,40 @@
   border-radius: 5px;
   width: 50%;
   height: 50%;
-  padding: 20px;
+  padding: 10px;
+}
+
+.cart-notification-header{
+  display: flex;
+  border: 1px solid red;
+  justify-content: space-between;
+}
+
+.dismiss-button{
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bolder;
+  cursor: pointer;
+  p{
+    transition: all 0.5s ease;
+    margin: 0px;
+  }
+  p:hover{
+    color: gray;
+    transition: all 0.5s ease;
+  }
+}
+
+.alert-header{
+  text-align: center;
+}
+
+.alert-text{
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.alert-text > div{
+  width: 50%;
 }

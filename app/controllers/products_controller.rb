@@ -15,17 +15,16 @@ class ProductsController < ApplicationController
   end
 
   def create
-   @product = Product.new(product_params)
+    @product = Product.new(product_params)
 
-    respond_to do |format|
-      if @product.save
+    if @product.save!
+      unless params[:images] != []
         params[:images]['photo'].each do |a|
           @product_attachment = @product.images.create!(:photo => a, :product_id => @product.id)
         end
-       format.html { redirect_to @product, notice: 'Product was successfully created.' }
-      else
-       format.html { render action: 'new' }
       end
+      redirect_to @product
+      flash[:product_created] = "Product successfully created"
     end
   end
 
