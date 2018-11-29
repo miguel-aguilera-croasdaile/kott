@@ -16,6 +16,8 @@
 
     <%= link_to "Add Product", new_product_path(@product), class: "link" if current_user.is_admin %>
 
+    <% unless current_user.is_admin %>
+
     <div class="cart-wrapper">
       <div class="cart-counter" style="display: <%= current_user.hide_if_no_notifications %>">
         <div class="dot">
@@ -28,6 +30,8 @@
       <% end %>
 
     </div>
+
+    <% end %>
 
     <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "link" ) %>
 
