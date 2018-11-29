@@ -2,13 +2,6 @@
 
   <h1> <span class="bolder" id="home"> kott </span> </h1>
 
-  <div class="home-banner-links">
-    <%= link_to "All Products", products_path, class: "link" %>
-    <a class= "link" href="#">About</a>
-    <a class= "link" href="#">Support</a>
-    <a class= "link" href="#">Contact</a>
-  </div>
-
   <div class="container-fluid featured-container">
     <div class="row">
       <% @products.each do |featured_product| %>
