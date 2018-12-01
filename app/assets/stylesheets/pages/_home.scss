@@ -20,3 +20,32 @@ body{
   margin: auto;
   margin-bottom: 20px;
 }
+
+.featured-card{
+  padding: 5px;
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.featured-product-image{
+  width: 100%;
+  height: 100%;
+}
+
+a{
+  color: #333333;
+  transition: all 0.25s ease;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.bolder{
+  font-weight: bolder;
+}
+
+
+
