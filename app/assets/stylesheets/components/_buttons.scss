@@ -21,7 +21,6 @@
   background-color: blue;
   width: 100%;
   margin: auto;
-  margin-bottom: 10px;
   border-radius: 2px !important;
   padding: 10px;
   color: #fefefe;
@@ -31,6 +30,26 @@
 }
 
 .primary-button:hover{
+  text-decoration: none !important;
+  color: white;
+  background-color: green;
+}
+
+.secondary-button{
+  background-color: orange;
+  width: 95%;
+  margin: auto;
+  border-radius: 2px !important;
+  padding: 10px;
+  color: #fefefe;
+  transition: all 0.25s ease;
+  a{text-decoration:none};
+  text-align: center;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.secondary-button:hover{
   text-decoration: none !important;
   color: white;
   background-color: green;
