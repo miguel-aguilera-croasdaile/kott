@@ -54,3 +54,21 @@
   color: white;
   background-color: green;
 }
+
+.devise-button{
+  background-color: blue;
+  width: 100%;
+  margin: auto;
+  border-radius: 2px !important;
+  // padding: 10px;
+  color: #fefefe;
+  transition: all 0.25s ease;
+  a{text-decoration:none};
+  text-align: center;
+}
+
+.devise-button:hover{
+  text-decoration: none !important;
+  color: white;
+  background-color: green;
+}

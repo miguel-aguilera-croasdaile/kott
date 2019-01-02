@@ -7,11 +7,13 @@ class CartItemsController < ApplicationController
     @cart_item.price = @product.price
     @cart_item.name = @product.name
     @cart_item.cart = current_user.cart
-    @cart_item.save!
 
-    if @cart_item.save!
+    if @cart_item.save
+      sweetalert('Your product offer has successfully been created', 'Success!', persistent: true, icon: "success")
       redirect_to product_path(@product)
-      flash[:cart_item_created] = "Product added to cart."
+    else
+      sweetalert('Something went wrong. Please try again', 'Error!', persistent: true, icon: "error")
+      redirect_to product_path(@product)
     end
   end
 
@@ -24,7 +26,7 @@ class CartItemsController < ApplicationController
   private
 
   def cart_item_params
-    params.require(:cart_item).permit(:size, :quantity)
+    params.require(:cart_item).permit(:size, :quantity, :color)
   end
 
 end

@@ -9,18 +9,20 @@
       <h1> Log In </h1>
 
       <div class="form-inputs">
-        <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
 
-        <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
-      </div>
-
-      <div class="form-bottom">
-
-        <div class="form-actions">
-          <%= f.button :submit, "Log in", class: 'primary-button' %>
+        <div class="login-input">
+          <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
+        </div>
+        <div class="login-input">
+          <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
+        </div>
+        <div id="login-submit">
+          <%= f.button :submit, "Log in", class: 'devise-button' %>
         </div>
 
-        <%= render "devise/shared/links" %>
+        <div class="form-link">
+          <%= render "devise/shared/links" %>
+        </div>
 
       </div>
 

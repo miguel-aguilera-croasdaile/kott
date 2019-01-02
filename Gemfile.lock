@@ -1,6 +1,5 @@
 GEM
   remote: https://rubygems.org/
-  remote: https://rails-assets.org/
   specs:
     actioncable (5.2.1)
       actionpack (= 5.2.1)
@@ -66,6 +65,7 @@ GEM
       rest-client (< 2.0)
     coderay (1.1.2)
     concurrent-ruby (1.1.3)
+    connection_pool (2.2.2)
     crass (1.0.4)
     devise (4.5.0)
       bcrypt (~> 3.0)
@@ -79,8 +79,11 @@ GEM
     dotenv-rails (2.5.0)
       dotenv (= 2.5.0)
       railties (>= 3.2, < 6.0)
+    draggable-rails (1.0.1)
     erubi (1.7.1)
     execjs (2.7.0)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
     font-awesome-sass (5.0.13)
       sassc (>= 1.11)
@@ -112,6 +115,9 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.4)
     multi_json (1.13.1)
+    multipart-post (2.0.0)
+    net-http-persistent (3.0.0)
+      connection_pool (~> 2.2)
     netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.8.5)
@@ -145,9 +151,6 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.2.1)
       sprockets-rails (>= 2.0.0)
-    rails-assets-es6-promise (4.2.4)
-    rails-assets-sweetalert2 (5.1.1)
-      rails-assets-es6-promise
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -200,7 +203,11 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sweet-alert2-rails (0.1.0)
+    stripe (4.4.1)
+      faraday (~> 0.13)
+      net-http-persistent (~> 3.0)
+    sweetify (1.0.0)
+      actionpack
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -237,6 +244,7 @@ DEPENDENCIES
   cloudinary
   devise
   dotenv-rails
+  draggable-rails
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
@@ -245,13 +253,13 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 5.2.1)
-  rails-assets-sweetalert2 (~> 5.1.1)!
   redis
   sass-rails
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
-  sweet-alert2-rails
+  stripe
+  sweetify
   uglifier
   web-console (>= 3.3.0)
   webpacker

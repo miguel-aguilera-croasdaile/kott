@@ -17,8 +17,9 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
-gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
-gem 'sweet-alert2-rails'
+gem 'draggable-rails'
+gem 'stripe'
+gem 'sweetify'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

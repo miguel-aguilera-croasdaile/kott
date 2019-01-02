@@ -1,5 +1,4 @@
 .login-wrapper{
-  // border: 1px solid green;
   min-height: 86vh;
   display: flex;
   align-items: center;
@@ -12,21 +11,16 @@
   margin: auto;
   width: 500px;
   top: 10px;
-  // border: 1px solid red;
 }
 
-.form-bottom{
-  text-align: center;
-  padding: 5px;
-}
-
-.devise-links{
-  margin: 10px;
+.form-link{
   text-align: center;
 }
 
-.password-warning{
-  font-size: 80%;
-  text-align: center;
+.login-input{
+  margin: 10px 0;
 }
 
+#login-submit{
+  margin: 30px 0;
+}

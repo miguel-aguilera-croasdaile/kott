@@ -4,13 +4,11 @@
 
   <div class="container-fluid featured-container">
     <div class="row">
-      <% @products.each do |featured_product| %>
+      <% @products.each do |product| %>
       <div class="col-sm-4 col-md-4 col-lg-4">
-        <%= link_to product_path(featured_product) do %>
+        <%= link_to product_path(product) do %>
         <div class="featured-card">
-
-          <%= image_tag("product.png", class: "featured-product-image") %>
-
+          <%= cl_image_tag product.main_photo, width: "100%", height: "100%" %>
           <div class="product-hover-card">
             <div class="product-information-wrapper">
               <div class="product-information">
