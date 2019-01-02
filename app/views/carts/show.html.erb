@@ -101,7 +101,7 @@
 
         <% unless @cart_items.empty? %>
         <%= simple_form_for(@order) do |t| %>
-        <%= t.button :submit, class: "checkout-button" %>
+        <%= t.button :submit, "Check Out", class: "checkout-button" %>
         <% end %>
         <% end %>
 
