@@ -2,11 +2,7 @@
 
   <div class="navbar-left">
 
-    <div class="sidebar-trigger">
-      <span onclick="openNav()">
-        <i class="fa fa-bars"></i>
-      </span>
-    </div>
+    <i class="sidebar-trigger fa fa-bars" onclick="openNav()"></i>
 
   </div>
 
@@ -14,22 +10,17 @@
 
     <% if user_signed_in? %>
 
-    <%= link_to "Add Product", new_product_path(@product), class: "link" if current_user.is_admin %>
+    <% if current_user.is_admin? %>
 
-    <% unless current_user.is_admin %>
+    <%= link_to "Products", new_product_path %>
 
-    <div class="cart-wrapper">
-      <div class="cart-counter" style="display: <%= current_user.hide_if_no_notifications %>">
-        <div class="dot">
-          <%= current_user.cart.cart_items.count %>
-        </div>
-      </div>
+    <%= link_to "Orders", orders_path %>
 
-      <%= link_to cart_path(current_user), class: "link" do %>
+    <% else %>
+
+    <%= link_to new_product_path(@product) do %>
       <i class="fa fa-shopping-cart"></i>
-      <% end %>
-
-    </div>
+    <% end %>
 
     <% end %>
 
@@ -37,8 +28,7 @@
 
     <% else %>
 
-    <%= link_to('Log In', new_user_session_path, class: "link" ) %>
-
+    <%= link_to('Sign In', new_user_session_path, class: "link" ) %>
 
     <% end %>
 

@@ -1,11 +1,11 @@
 import $ from 'jquery';
 
 function hover(){
-  const home = document.getElementById('home');
+  const product_container = document.getElementById('product-container');
 
-  if (home) {
+  if (product_container) {
     $(function() {
-      $(".featured-card").hover(function() {
+      $(".product-card").hover(function() {
         $(this).find(".product-hover-card").animate({ opacity: "toggle"}, {duration: 200 })
       });
     });

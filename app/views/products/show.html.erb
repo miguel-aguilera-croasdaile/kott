@@ -17,7 +17,6 @@
   <div class="product-show-right">
 
     <h4><b><%= @product.name.upcase %></b></h4>
-    <p><b><%= simple_format(@product.description.upcase) %></b></p>
     <h4><b><%= @product.price %></b></h4>
 
     <%= simple_form_for([ @product, @cart_item ]) do |t| %>

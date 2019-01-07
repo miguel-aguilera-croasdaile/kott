@@ -1,52 +1,6 @@
 // Specific CSS for your home-page
-body{
-  // background: #E65A54;
-  background: white
-}
 .home-banner{
   text-align: center;
   margin-bottom: 20px;
 }
-
-.home-banner-links{
-  width: 50%;
-  margin: auto;
-  display: flex;
-  text-align: center;
-  justify-content: space-around;
-}
-
-.featured-container{
-  width: 100%;
-  margin: auto;
-  margin-bottom: 20px;
-}
-
-.featured-card{
-  padding: 5px;
-  display: flex;
-  position: relative;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.featured-product-image{
-  width: 100%;
-  height: 100%;
-}
-
-a{
-  color: #333333;
-  transition: all 0.25s ease;
-}
-
-a:hover{
-  text-decoration: none;
-}
-
-.bolder{
-  font-weight: bolder;
-}
-
-
 
