@@ -19,6 +19,10 @@
     <h4><b><%= @product.name.upcase %></b></h4>
     <h4><b><%= @product.price %></b></h4>
 
+    <% if @product.description %>
+    <h4><b><%= simple_format(@product.description) %></b></h4>
+    <% end %>
+
     <%= simple_form_for([ @product, @cart_item ]) do |t| %>
     <div class="inline-inputs">
       <%= t.input :size, collection: [ "XS", "S", "M", "L", "XL"], id: "size-select", required: true %>

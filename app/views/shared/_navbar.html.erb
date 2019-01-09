@@ -18,7 +18,7 @@
 
     <% else %>
 
-    <%= link_to new_product_path(@product) do %>
+    <%= link_to user_cart_path(current_user) do %>
       <i class="fa fa-shopping-cart"></i>
     <% end %>
 

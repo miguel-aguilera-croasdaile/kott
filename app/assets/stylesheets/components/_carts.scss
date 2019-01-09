@@ -9,9 +9,13 @@
 // LEFT
 
 .cart-left{
-  width: 70%;
+  width: 60%;
   margin-right: 10px;
   height: auto;
+}
+
+.cart-products{
+  margin-bottom: 10px;
 }
 
 .cart-product-image{
@@ -72,14 +76,15 @@
   justify-content: space-around;
 }
 
+// RIGHT
+
 .cart-right{
-  width: 30%;
+  width: 40%;
   color: white;
   background-color: #0f0f0f;
   border-radius: 4px;
 }
 
-// RIGHT
 
 .cart-summary-header{
   padding: 10px;

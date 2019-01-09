@@ -9,7 +9,4 @@
 user = User.create(email: "admin@gmail.com", password: "123456", is_admin: true)
 user_two = User.create(email: "miguel@gmail.com", password: "123456", is_admin: false)
 
-product_one = Product.create(name: "Product One", price: "100 Lps", available: true, featured: true)
-product_two = Product.create(name: "Product Two", price: "100 Lps", available: true, featured: true)
-product_three = Product.create(name: "Product Three", price: "100 Lps", available: true, featured: true)
 

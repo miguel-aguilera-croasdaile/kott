@@ -1,0 +1,28 @@
+<div class="product-show-flex">
+
+  <div class="product-show-left">
+
+    <div class="product-image">
+      <%= cl_image_tag @product.main_photo, width: "100%", height: "100%" %>
+    </div>
+
+    <% @product.images.each do |image| %>
+    <div class="product-image">
+      <%= cl_image_tag image.photo, width: "100%", height: "100%" %>
+    </div>
+    <% end %>
+
+  </div>
+
+  <div class="product-show-right">
+
+    <h4><b><%= @product.name.upcase %></b></h4>
+    <h4><b><%= @product.price %></b></h4>
+
+    <% if @product.description %>
+    <h4><b><%= simple_format(@product.description) %></b></h4>
+    <% end %>
+
+  </div>
+
+</div>

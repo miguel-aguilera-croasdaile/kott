@@ -1,3 +1,5 @@
+// SHOW
+
 .product{margin: 15px 0px;}
 
 .product-hover-card {
@@ -26,6 +28,12 @@
 
 .product-information{
   margin: auto;
+  text-align: center;
+}
+
+.product-index-image{
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
 }
 
 // NEW
@@ -127,8 +135,10 @@
   width: 50%;
   padding: 0 20px;
   padding-bottom: 20px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 10px;
   h4{margin-top: 0px;}
-
 }
 
 .product-image{

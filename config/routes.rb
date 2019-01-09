@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
-  resources :carts, only: [:show]
+  resource :user do
+    resources :carts, only: [:show]
+  end
   resources :products do
     resources :cart_items,  only: [:create]
   end

@@ -1,0 +1,62 @@
+<div class="login-wrapper">
+  <div class="product-form">
+
+    <h2> Add Product Listing </h2>
+
+    <%= simple_form_for(@product, :html => { :multipart => true }) do |f| %>
+
+    <div class="product-new">
+
+      <div class="product-text-field">
+        <%= f.input :name %><br>
+        <%= f.input :description %><br>
+        <%= f.input :price %><br>
+      </div>
+
+      <div class="product-images-field">
+
+        <div class="photos-container">
+
+          <div class="main-photo">
+            <p>Main Photo</p>
+            <label class="secondary-button">
+              Choose File
+              <span style="display:none;">
+                <%= f.input :main_photo, label: "Main Photo" %>
+              </span>
+            </label>
+            <%= f.input :main_photo_cache, as: :hidden %>
+          </div>
+
+          <div class="extra-photos">
+
+            <%= f.fields_for :image do |p| %>
+
+            <p> Extra Photos </p>
+            <label class="secondary-button">
+              Choose Files
+              <span style="display:none;">
+                <%= p.file_field :photo, multiple: true, name: "images[photo][]" %>
+              </span>
+            </label>
+
+            <% end %>
+          </div>
+
+        </div>
+
+      </div>
+
+      <%= f.button :submit, "Add Product", class: "primary-button product" %>
+
+    </div>
+
+    <% end %>
+
+    <div class="cancel-link">
+      <%= link_to 'Go Back', products_path %>
+    </div>
+
+  </div>
+
+</div>

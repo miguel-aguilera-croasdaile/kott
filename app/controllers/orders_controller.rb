@@ -1,4 +1,11 @@
 class OrdersController < ApplicationController
+
+  def index
+    if current_user.is_admin?
+      @orders = Order.all
+    end
+  end
+
   def new
     @order = Order.new
   end
@@ -21,10 +28,15 @@ class OrdersController < ApplicationController
         )
       @order_item.save!
       @order.total = @order.total + (cart_item.product.price.to_i * cart_item.quantity.to_i)
-
     end
 
-    @order.save!
+    if @order.save
+      sweetalert('Your order has been placed', 'Success!', persistent: true, icon: "success")
+      redirect_to user_cart_path(current_user)
+    else
+      sweetalert('Something went wrong. Please try again', 'Error!', persistent: true, icon: "error")
+      redirect_to cart_path
+    end
 
   end
 

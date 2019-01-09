@@ -1,13 +1,25 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
     @products = Product.all
+
+    if current_user.is_admin?
+      render 'products/admin/index'
+    else
+      @cart_item = CartItem.new
+      render 'products/user/index'
+    end
   end
 
   def show
-    @cart_item = CartItem.new
+    if current_user.is_admin?
+      render 'products/admin/show'
+    else
+      @cart_item = CartItem.new
+      render 'products/user/show'
+    end
   end
 
   def new
@@ -23,8 +35,8 @@ class ProductsController < ApplicationController
           @product_attachment = @product.images.create!(:photo => a, :product_id => @product.id)
         end
       end
+      sweetalert('Product successfully created', 'Success!', persistent: true, icon: "success")
       redirect_to @product
-      flash[:product_created] = "Product successfully created"
     end
   end
 
