@@ -5,21 +5,11 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
 
-    if current_user.is_admin?
-      render 'products/admin/index'
-    else
-      @cart_item = CartItem.new
-      render 'products/user/index'
-    end
+    @cart_item = CartItem.new
   end
 
   def show
-    if current_user.is_admin?
-      render 'products/admin/show'
-    else
-      @cart_item = CartItem.new
-      render 'products/user/show'
-    end
+    @cart_item = CartItem.new
   end
 
   def new
