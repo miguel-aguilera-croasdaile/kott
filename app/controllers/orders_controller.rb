@@ -3,6 +3,8 @@ class OrdersController < ApplicationController
   def index
     if current_user.is_admin?
       @orders = Order.all
+    else
+      @orders = Order.where(user: current_user)
     end
   end
 
@@ -30,13 +32,27 @@ class OrdersController < ApplicationController
       @order.total = @order.total + (cart_item.product.price.to_i * cart_item.quantity.to_i)
     end
 
-    if @order.save
-      sweetalert('Your order has been placed', 'Success!', persistent: true, icon: "success")
-      redirect_to user_cart_path(current_user)
+    if @order.save!
+      respond_to do |format|
+        format.html
+        format.js  # <-- will render `app/views/order/create.js.erb`
+        # redirect_to orders_path
+      end
     else
-      sweetalert('Something went wrong. Please try again', 'Error!', persistent: true, icon: "error")
-      redirect_to cart_path
+      respond_to do |format|
+        format.html
+        format.js  # <-- idem
+      end
     end
+
+    # if @order.save
+    #   sweetalert('Your order has been placed.', 'Success!', persistent: true, icon: "success")
+    #   sleep(10)
+    #   redirect_to orders_path
+    # else
+    #   sweetalert('Something went wrong. Please try again later.', 'Error!', persistent: true, icon: "error")
+    #   redirect_to cart_path
+    # end
 
   end
 

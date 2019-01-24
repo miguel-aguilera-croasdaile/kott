@@ -1,3 +1,25 @@
 <div class="order-index">
 
+  <div class="container-fluid orders-container" id="orders-container">
+    <div class="row">
+      <% @orders.each do |order| %>
+      <div class="order">
+        <p>Order ID:  <%= order.id %> </p>
+
+        <p> Order Items: </p>
+
+        <% order.order_items.each_with_index do |order_item, index| %>
+        <p> <%= index + 1 %>. <%= order_item.name %> <%= order_item.quantity %> <%= order_item.size %> </p>
+        <% end %>
+
+        <p> Order total: <%= order.total %></p>
+
+        <p> Order Created on <%= order.created_at.strftime("%b %e, %l:%M %p") %></p>
+        <p> Last Updated on <%= order.created_at.strftime("%b %e, %l:%M %p") %></p>
+
+      </div>
+      <% end %>
+    </div>
+  </div>
+
 </div>

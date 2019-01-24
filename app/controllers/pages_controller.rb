@@ -3,4 +3,8 @@ class PagesController < ApplicationController
   def home
     @featured = Product.where(featured: true)
   end
+
+  def checkout
+
+  end
 end

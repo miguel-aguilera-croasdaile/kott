@@ -27,7 +27,7 @@
 
     <% else %>
 
-    <%= link_to user_cart_path(current_user), class: "no-text-deco" do %>
+    <%= link_to '/cart', class: "no-text-deco" do %>
     <div class="notifiable-link" id="notifiable-link">
       <i class="fa fa-shopping-cart"></i>
 
@@ -35,6 +35,12 @@
       <div class="notification-badge" id="cart_item_counter"><%= current_user.cart.cart_items.count %></div>
       <% end %>
 
+    </div>
+    <% end %>
+
+    <%= link_to orders_path, class: "no-text-deco" do %>
+    <div class="navbar-link">
+      <p> Orders </p>
     </div>
     <% end %>
 

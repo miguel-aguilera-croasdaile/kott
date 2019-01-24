@@ -7,6 +7,7 @@ class CreateCartItems < ActiveRecord::Migration[5.2]
       t.string :size
       t.string :color
       t.string :price
+      t.string :archived?, default: false
       t.integer :quantity
       t.timestamps
     end

@@ -86,7 +86,7 @@
 
           <div class="align-right">
 
-            <h4> <%= @cart_total %> Lps </h4>
+            <h4> <%= @cart.total %> Lps </h4>
 
           </div>
 
@@ -97,9 +97,11 @@
       <div class="cart-summary-button">
 
         <% unless @cart_items.empty? %>
-        <%= simple_form_for(@order) do |t| %>
-        <%= t.button :submit, "Check Out", class: "checkout-button" %>
+
+        <%= link_to '/checkout' do %>
+        <div class="checkout-button">Proceed to Checkout</div>
         <% end %>
+
         <% end %>
 
       </div>

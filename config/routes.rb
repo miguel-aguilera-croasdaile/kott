@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  devise_for :users
-  resource :user do
-    resources :carts, only: [:show]
+  get '/checkout', to: 'orders#new'
+  get '/cart', to: 'carts#show'
+
+  resources :carts do
+    resource :orders, only: [:new]
   end
+
+  devise_for :users
+  resource :user
+
   resources :products do
     resources :cart_items,  only: [:create]
   end
+
   resources :cart_items, only: [:destroy]
-  resources :orders do
-    resources :charges
-  end
+  resources :orders
+  resources :charges
+
 end
