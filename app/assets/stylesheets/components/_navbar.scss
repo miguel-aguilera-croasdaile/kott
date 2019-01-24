@@ -1,65 +1,65 @@
-.navbar{
-  justify-content: space-between;
-  padding: 15px;
+.custom-navbar{
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0px;
   height: 7vh;
   a{color: black; margin: 10px;}
 }
 
-.navbar-left{
-  justify-content: flex-begin;
+.custom-navbar-left{
   display: flex;
-  width: 50%;
+  align-items: center;
+  width: 20%;
+  height: 7vh;
+  padding: 12px 15px;;
 }
 
-.navbar-right{
+.custom-navbar-right{
+  display: flex;
   justify-content: flex-end;
+  align-items: center;
+  width: 80%;
+  height: 7vh;
+  padding: 20px;
+}
+
+.navbar-link{
+  p{margin: 5px; }
+}
+
+a.navbar-link:hover{
+  text-decoration: none
+}
+
+.notifiable-link{
+  padding: 10px;
   display: flex;
-  width: 50%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.sidebar-trigger{
-  padding: 7px 10px;
-  cursor: pointer;
+.notification-badge{
+  font-size: 75%;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  bottom: -5px;
+  right: -5px;
 }
 
-// .links{
-//   display: flex;
-//   justify-content: flex-end;
-//   height: 32px;
-// }
+.no-text-deco{
+}
 
-// .link{
-//   margin: 0 10px;
-// }
+.no-text-deco:hover{
+  text-decoration: none;
+  font-weight: bolder;
+}
 
-// .fa-bars{
-//   cursor: pointer;
-// }
-
-// .cart-wrapper{
-//   position: relative;
-// }
-
-// .cart-counter{
-//   position: absolute;
-//   bottom: -5px;
-//   right: -5px;
-// }
-
-
-// .dot {
-//   background-color: red;
-//   height: 20px;
-//   width: 20px;
-//   border-radius: 50%;
-//   display: inline-block;
-//   text-align:center;
-//   font-size: 80%;
-//   color: white;
-//   font-weight: bolder;
-
-// }

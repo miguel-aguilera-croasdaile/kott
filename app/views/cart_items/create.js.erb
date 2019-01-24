@@ -1,10 +1,27 @@
-function swalBid(){
+function sweetAlertCartItemCreated(){
   swal({
     title: "Success",
-    text: "You've successfully added the product to your cart.",
+    text: "Product successfully added to cart.",
     icon: "success"
   });
 }
 
-swalBid()
+function updateCartItemCounterOnFormSubmit(){
+  const cart_counter = document.getElementById('cart_item_counter')
+  converted_counter = parseInt(cart_counter.innerHTML)
+  console.log(converted_counter + 1)
+  cart_counter.innerHTML = converted_counter + 1
+}
+
+function clearFormOnSubmit(){
+  const size_input = document.getElementById("cart_item_size");
+  const quantity_input = document.getElementById("cart_item_quantity");
+
+  size_input.value = ''
+  quantity_input.value = ''
+}
+
+clearFormOnSubmit()
+updateCartItemCounterOnFormSubmit()
+sweetAlertCartItemCreated()
 

@@ -8,13 +8,25 @@ class CartItemsController < ApplicationController
     @cart_item.name = @product.name
     @cart_item.cart = current_user.cart
 
-    if @cart_item.save
-      sweetalert('Your product offer has successfully been created', 'Success!', persistent: true, icon: "success")
-      redirect_to product_path(@product)
+    if @cart_item.save!
+      respond_to do |format|
+        format.html
+        format.js  # <-- will render `app/views/cart_item/create.js.erb`
+      end
     else
-      sweetalert('Something went wrong. Please try again', 'Error!', persistent: true, icon: "error")
-      redirect_to product_path(@product)
+      respond_to do |format|
+        format.html
+        format.js  # <-- idem
+      end
     end
+
+    # if @cart_item.save
+    #   sweetalert('Product successfully added to cart.', 'Success!', persistent: true, icon: "success")
+    #   redirect_to product_path(@product)
+    # else
+    #   sweetalert('Something went wrong. Please try again', 'Error!', persistent: true, icon: "error")
+    #   redirect_to product_path(@product)
+    # end
   end
 
   def destroy

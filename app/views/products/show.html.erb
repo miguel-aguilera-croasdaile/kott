@@ -16,12 +16,26 @@
 
   <div class="product-show-right">
 
-    <h4><b><%= @product.name.upcase %></b></h4>
-    <h4><b><%= @product.price %></b></h4>
+    <div class="product-information-large">
 
-    <% if @product.description %>
-    <h4><b><%= simple_format(@product.description) %></b></h4>
+      <h3><b><%= @product.name.upcase %></b></h3>
+      <h4><b><%= @product.price %></b></h4>
+
+      <% if @product.description %>
+      <h4><b><%= simple_format(@product.description) %></b></h4>
+      <% end %>
+
+    </div>
+
+    <div class="product-actions">
+
+    <%= simple_form_for([@product, @cart_item], remote: true) do |f| %>
+    <%= f.input :size, as: :select, collection: ["XS", "S", "M", "L", "XL"] %>
+    <%= f.input :quantity %>
+    <%= f.submit "Add to Cart", class: "primary-button", id: "add-to-cart-button" %>
     <% end %>
+
+    </div>
 
   </div>
 

@@ -14,10 +14,14 @@
 @import "components/index";
 @import "pages/index";
 
+body{
+  background: white
+}
+
 .body{
   min-height: 93vh;
 }
 
-body{
-  background: white
-}
+// div{
+//   border: 1px solid black;
+// }

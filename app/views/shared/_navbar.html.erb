@@ -1,34 +1,58 @@
-<div class="navbar">
+<div class="custom-navbar">
 
-  <div class="navbar-left">
+  <div class="custom-navbar-left">
 
     <i class="sidebar-trigger fa fa-bars" onclick="openNav()"></i>
 
   </div>
 
-  <div class="navbar-right">
+  <div class="custom-navbar-right">
 
     <% if user_signed_in? %>
 
     <% if current_user.is_admin? %>
 
-    <%= link_to "Products", new_product_path %>
 
-    <%= link_to "Orders", orders_path %>
+    <%= link_to new_product_path, class: "no-text-deco" do %>
+    <div class="navbar-link">
+      <p> New Product </p>
+    </div>
+    <% end %>
+
+    <%= link_to orders_path, class: "no-text-deco" do %>
+    <div class="navbar-link">
+      <p> Orders </p>
+    </div>
+    <% end %>
 
     <% else %>
 
-    <%= link_to user_cart_path(current_user) do %>
+    <%= link_to user_cart_path(current_user), class: "no-text-deco" do %>
+    <div class="notifiable-link">
       <i class="fa fa-shopping-cart"></i>
+
+      <% if current_user.cart.cart_items.count > 0 %>
+      <div class="notification-badge" id="cart_item_counter"><%= current_user.cart.cart_items.count %></div>
+      <% end %>
+
+    </div>
     <% end %>
 
     <% end %>
 
-    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "link" ) %>
+    <%= link_to( destroy_user_session_path, method: :delete, class: "no-text-deco" ) do %>
+    <div class="navbar-link">
+      <p> Log Out</p>
+    </div>
+    <% end %>
 
     <% else %>
 
-    <%= link_to('Sign In', new_user_session_path, class: "link" ) %>
+    <%= link_to( new_user_session_path, class: "no-text-deco" ) do %>
+    <div class="navbar-link">
+      <p> Sign In </p>
+    </div>
+    <% end %>
 
     <% end %>
 
