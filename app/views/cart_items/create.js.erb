@@ -8,9 +8,16 @@ function sweetAlertCartItemCreated(){
 
 function updateCartItemCounterOnFormSubmit(){
   const cart_counter = document.getElementById('cart_item_counter')
-  converted_counter = parseInt(cart_counter.innerHTML)
-  console.log(converted_counter + 1)
-  cart_counter.innerHTML = converted_counter + 1
+  if (cart_counter) {
+    converted_counter = parseInt(cart_counter.innerHTML)
+    console.log(converted_counter + 1)
+    cart_counter.innerHTML = converted_counter + 1
+  }
+
+  else {
+    const notifiable_link = document.getElementById('notifiable-link')
+    notifiable_link.innerHTML += '<% if current_user.cart.cart_items.count > 0 %> <div class="notification-badge" id="cart_item_counter"><%= current_user.cart.cart_items.count %></div><% end %>';
+  }
 }
 
 function clearFormOnSubmit(){

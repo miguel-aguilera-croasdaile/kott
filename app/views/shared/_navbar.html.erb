@@ -28,7 +28,7 @@
     <% else %>
 
     <%= link_to user_cart_path(current_user), class: "no-text-deco" do %>
-    <div class="notifiable-link">
+    <div class="notifiable-link" id="notifiable-link">
       <i class="fa fa-shopping-cart"></i>
 
       <% if current_user.cart.cart_items.count > 0 %>
