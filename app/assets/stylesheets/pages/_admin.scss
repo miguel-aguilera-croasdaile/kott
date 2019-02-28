@@ -1,0 +1,22 @@
+.admin-interface-container{
+  display: flex;
+}
+
+.admin-sidebar{
+  height: 93vh;
+  width: 20%;
+  position: sticky;
+  top: 7vh;
+  align-self: flex-start;
+  border: red 1px solid;
+}
+
+.admin-body{
+  width: 80%;
+}
+
+.sidebar-link{
+  border: red 1px solid;
+  color: white;
+  p{margin: 5px; color: $black}
+}

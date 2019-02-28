@@ -5,6 +5,9 @@
   align-items: center;
   height: 7vh;
   a{color: black; margin: 10px;}
+  position: sticky;
+  top: 0vh;
+  background-color: orange;
 }
 
 .custom-navbar-left{

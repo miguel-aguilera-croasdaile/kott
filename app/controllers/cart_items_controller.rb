@@ -4,7 +4,7 @@ class CartItemsController < ApplicationController
     @product = Product.find(params[:product_id])
     @cart_item = CartItem.new(cart_item_params)
     @cart_item.product = @product
-    @cart_item.price = @product.price
+    @cart_item.price_cents = @product.price_cents
     @cart_item.name = @product.name
     @cart_item.cart = current_user.cart
 
@@ -19,14 +19,6 @@ class CartItemsController < ApplicationController
         format.js  # <-- idem
       end
     end
-
-    # if @cart_item.save
-    #   sweetalert('Product successfully added to cart.', 'Success!', persistent: true, icon: "success")
-    #   redirect_to product_path(@product)
-    # else
-    #   sweetalert('Something went wrong. Please try again', 'Error!', persistent: true, icon: "error")
-    #   redirect_to product_path(@product)
-    # end
   end
 
   def destroy

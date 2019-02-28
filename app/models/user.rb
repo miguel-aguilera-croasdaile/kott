@@ -7,7 +7,6 @@ class User < ApplicationRecord
 
   def create_cart
     @cart = Cart.new(user_id: self.id)
-    @cart.total = 0
     @cart.save!
   end
 

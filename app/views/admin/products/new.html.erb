@@ -1,8 +1,8 @@
 <h1>
-  Normal New
+  Admin New
 </h1>
 
-<%= simple_form_for(@product) do |f| %>
+<%= simple_form_for([:admin, @product]) do |f| %>
 
 <%= f.input :name %>
 <%= f.input :description %>

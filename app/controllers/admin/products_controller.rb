@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Admin::ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
         end
       end
       sweetalert('Product successfully created', 'Success!', persistent: true, icon: "success")
-      redirect_to @product
+      redirect_to admin_product_path(@product)
     end
   end
 

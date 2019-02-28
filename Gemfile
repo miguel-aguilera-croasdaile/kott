@@ -20,6 +20,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'draggable-rails'
 gem 'stripe'
 gem 'sweetify'
+gem 'money-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

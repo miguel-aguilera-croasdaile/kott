@@ -27,7 +27,7 @@
       <div class="cart-product">
 
         <div class="cart-product-image">
-          <div class="cart-product-image" style="background-image: url(<%= cl_image_path cart_item.product.main_photo, height: 200, width: 200, crop: :fill %>);"> </div>
+          <div class="cart-product-image" style="background-image: url(<%= cl_image_path cart_item.product.images.first.photo, height: 200, width: 200, crop: :fill %>);"> </div>
         </div>
 
         <div class="cart-product-info">
@@ -39,7 +39,7 @@
           <div class="cart-product-description">
             <p> <b> Size: </b> <%= cart_item.size  %> </p>
             <p> <b> Quantity: </b> <%= cart_item.quantity  %> </p>
-            <p> <b> Price: </b> <%= cart_item.product.price %> Lps </p>
+            <p> <b> Price: </b> <%= humanized_money_with_symbol(cart_item.product.price_cents) %> Lps </p>
           </div>
 
           <div class="cart-product-actions">
@@ -86,7 +86,7 @@
 
           <div class="align-right">
 
-            <h4> <%= @cart.total %> Lps </h4>
+            <h4> <%= @cart %> </h4>
 
           </div>
 
@@ -98,8 +98,8 @@
 
         <% unless @cart_items.empty? %>
 
-        <%= link_to '/checkout' do %>
-        <div class="checkout-button">Proceed to Checkout</div>
+        <%= simple_form_for(@order) do |f| %>
+        <%= f.submit "Proceed To Checkout", class: "checkout-button" %>
         <% end %>
 
         <% end %>

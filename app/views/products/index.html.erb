@@ -1,26 +1,36 @@
-<div class="container-fluid products-container" id="product-container">
-  <div class="row">
-    <% @products.each do |product| %>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <div class="product">
+<div class="products-container">
 
-        <%= link_to product_path(product) do %>
-        <div class="product-card">
-          <div class="product-index-image" style="background-image: url(<%= product.main_photo %>); background-size: cover">
-          </div>
-          <div class="product-hover-card">
-            <div class="product-information-wrapper">
-              <div class="product-information">
-                <p> <b> <%= product.name %> </b> </p>
-                <p> <b> <%= product.price %> </b> </p>
-              </div>
+  <div class="row">
+
+    <% @products.each do |product| %>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+
+      <%= link_to product_path(product) do %>
+
+      <div class="product-card">
+
+        <div class="product-index-image" style="background-image: url(<%= product.images.first.photo %>); background-size: cover">
+        </div>
+
+        <div class="product-hover-card">
+          <div class="product-information-wrapper">
+            <div class="product-information">
+              <p> <b> <%= product.name %> </b> </p>
+              <p> <b> <%= humanized_money_with_symbol(product.price_cents) %> </b> </p>
             </div>
           </div>
         </div>
+
       </div>
 
       <% end %>
     </div>
+
     <% end %>
+
   </div>
+
 </div>
+
+
